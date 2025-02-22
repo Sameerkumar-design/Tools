@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A collection of free online tools for image compression, resizing, PDF conversion, and more.">
+    <meta name="keywords" content="image compressor, image resizer, PDF to Word, image converter, free tools, SEO, responsive design">
+    <meta name="author" content="Sameer kumar">
+    <title>Online Tools - Home</title>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .tool-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 2rem;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .tool-card i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .tool-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0.5rem 0;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0 0 1.5rem;
+        }
+
+        .tool-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .tool-link:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            padding: 1rem 0;
+            background: #fff;
+            width: 100%;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tools-grid {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+        <p>Free and easy-to-use tools for image compression, resizing, PDF conversion, and more.</p>
+    </header>
+
+    <main>
+        <!-- Tools Grid -->
+        <div class="tools-grid">
+            <!-- Image Compressor -->
+            <a href="/Tools/img-compress.html" class="tool-card">
+                <i class="fas fa-file-image"></i>
+                <h2>Image Compressor</h2>
+                <p>Compress your images to reduce file size without losing quality.</p>
+                <span class="tool-link">Use Tool</span>
+            </a>
+
+            <!-- Image Resizer -->
+            <a href="/Tools/img-resizer.html" class="tool-card">
+                <i class="fas fa-expand-alt"></i>
+                <h2>Image Resizer</h2>
+                <p>Resize your images to the desired dimensions easily.</p>
+                <span class="tool-link">Use Tool</span>
+            </a>
+
+            <!-- PDF to Word Converter -->
+            <a href="pdf-to-word.html" class="tool-card">
+                <i class="fas fa-file-pdf"></i>
+                <h2>PDF to Word Converter</h2>
+                <p>Convert your PDF files to Word documents effortlessly.</p>
+                <span class="tool-link">Use Tool</span>
+            </a>
+
+            <!-- Image Converter -->
+            <a href="/Tools/img-convertor.html" class="tool-card">
+                <i class="fas fa-exchange-alt"></i>
+                <h2>Image Converter</h2>
+                <p>Convert images to JPG, PNG, or WEBP formats.</p>
+                <span class="tool-link">Use Tool</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Online Tools. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
