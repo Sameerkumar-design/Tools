@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resize your images easily with our fully responsive image resizer tool. Adjust dimensions and optimize images for better performance.">
+    <meta name="keywords" content="image resizer, resize images, image tool, SEO, responsive design">
+    <meta name="author" content="Sameer kumar">
+    <title>Image Resizer Tool</title>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Styles (Same as Image Compressor) */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+        header p {
+            font-size: 1rem;
+            color: #666;
+        }
+        main {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        #resize-tool {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        #resize-tool input, #resize-tool button {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        #resize-tool input:focus {
+            border-color: #007bff;
+        }
+        #resize-tool button {
+            background: #007bff;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        #resize-tool button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        #output {
+            margin-top: 1.5rem;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        #resized-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        #download-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        #download-link:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        .ad-space {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .ad-container {
+            margin: 0 auto;
+            max-width: 728px;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Image Resizer Tool</h1>
+        <p>Resize your images to the desired dimensions easily.</p>
+    </header>
+
+    <main>
+        <!-- Ad Space 1 (Top) -->
+        <section class="ad-space">
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID_1"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+
+        <!-- Resize Tool -->
+        <section id="resize-tool">
+            <h2>Resize Your Image</h2>
+            <input type="file" id="image-input" accept="image/*">
+            <label for="width">Width (in pixels):</label>
+            <input type="number" id="width" placeholder="Enter width">
+            <label for="height">Height (in pixels):</label>
+            <input type="number" id="height" placeholder="Enter height">
+            <button id="resize-btn">Resize Image</button>
+            <div id="output">
+                <img id="resized-image" src="" alt="Resized Image">
+                <a id="download-link" href="" download="resized-image.jpg">Download Resized Image</a>
+            </div>
+        </section>
+
+        <!-- Ad Space 2 (Bottom) -->
+        <section class="ad-space">
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID_2"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Image Resizer Tool. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        // JavaScript Functionality
+        document.getElementById('resize-btn').addEventListener('click', function() {
+            const fileInput = document.getElementById('image-input');
+            const width = document.getElementById('width').value;
+            const height = document.getElementById('height').value;
+            const outputImage = document.getElementById('resized-image');
+            const downloadLink = document.getElementById('download-link');
+            const outputDiv = document.getElementById('output');
+
+            if (fileInput.files.length === 0 || !width || !height) {
+                alert('Please select an image and enter both width and height.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const img = new Image();
+                img.src = event.target.result;
+
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    canvas.toBlob(function(blob) {
+                        const resizedUrl = URL.createObjectURL(blob);
+                        outputImage.src = resizedUrl;
+                        downloadLink.href = resizedUrl;
+                        outputDiv.style.display = 'flex';
+                    }, 'image/jpeg');
+                };
+            };
+
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+</html>
