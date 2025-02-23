@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your Equated Monthly Installment (EMI) for loans easily with our EMI Calculator tool.">
+    <meta name="keywords" content="EMI calculator, loan calculator, EMI tool, SEO, responsive design">
+    <meta name="author" content="Your Name">
+    <title>EMI Calculator Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            color: #333;
+        }
+
+        #emi-calculator {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #emi-calculator input, #emi-calculator button {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #emi-calculator input:focus {
+            border-color: #007bff;
+        }
+
+        #emi-calculator button {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        #emi-calculator button:hover {
+            transform: scale(1.05);
+        }
+
+        #output {
+            margin-top: 1.5rem;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #output p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EMI Calculator Tool</h1>
+        <p>Calculate your Equated Monthly Installment (EMI) for loans easily.</p>
+    </header>
+
+    <main>
+        <section id="emi-calculator">
+            <h2>Calculate Your EMI</h2>
+            <input type="number" id="loan-amount" placeholder="Loan Amount (₹)">
+            <input type="number" id="interest-rate" placeholder="Interest Rate (%)">
+            <input type="number" id="loan-tenure" placeholder="Loan Tenure (Years)">
+            <button id="calculate-btn">Calculate EMI</button>
+            <div id="output">
+                <p>Your EMI: <span id="emi-result"></span></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const loanAmount = parseFloat(document.getElementById('loan-amount').value);
+            const interestRate = parseFloat(document.getElementById('interest-rate').value);
+            const loanTenure = parseFloat(document.getElementById('loan-tenure').value) * 12; // Convert years to months
+            const emiResult = document.getElementById('emi-result');
+            const outputDiv = document.getElementById('output');
+
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTenure)) {
+                alert('Please enter valid values for all fields.');
+                return;
+            }
+
+            const monthlyInterestRate = interestRate / 12 / 100;
+            const emi = (loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, loanTenure)) / (Math.pow(1 + monthlyInterestRate, loanTenure) - 1);
+
+            emiResult.textContent = `₹${emi.toFixed(2)}`;
+            outputDiv.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
